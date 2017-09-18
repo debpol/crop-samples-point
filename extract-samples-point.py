@@ -38,14 +38,9 @@ for json_fn in args.jsonfiles:
             continue
           points = points[0]
           print 'Processing {}'.format(fn)
-          ###
+          
           # TODO check for out of range in the image
           for size in args.sizes:#for each one windows size ...
-                #make new dir with the name of the tag and the size
-              outdir=os.path.dirname(fn) +'/'+ tag + str(size) +'x'+ str(size)
-              if not os.path.exists(outdir):
-                  os.makedirs(outdir)
-
               yleft =  points['y'] - (size /2) - 1
               xupper =  points['x'] - (size /2) - 1
               yright = points['y'] + (size /2)
@@ -54,9 +49,16 @@ for json_fn in args.jsonfiles:
               box = map(int, [yleft, xupper, yright, xlower])
               im = Image.open(fn)
               cropped=im.crop(box)
-              #region.thumbnail((mw, mh), Image.ANTIALIAS)
-              orginalfn=os.path.basename(fn)
+
+              #make new dir with the name of the tag and the size
+              outdir=os.path.dirname(fn) +'/'+ tag + str(size) +'x'+ str(size)
+              if not os.path.exists(outdir):
+                  os.makedirs(outdir)
+              
               #make new file name to save the cropped image
+              orginalfn=os.path.basename(fn)             
               croppedfn=os.path.splitext(orginalfn)[0]+'_'+ str(size) +'x'+ str(size) + os.path.splitext(orginalfn)[1]
               outdirfn=outdir+'/'+croppedfn
+              
+              #save cropped box image in /imgs/tag-sizexsize-folder/original-name-sizexsize.extesion-file
               cropped.save(outdirfn)
