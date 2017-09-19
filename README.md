@@ -1,5 +1,5 @@
 # crop-samples-point
-## This python script crops boxes of diferent size over a set of images, indicated by samples point in a annotations json file performed with Sloth Labeling Tool
+## This python script crops boxes of different size over a set of images, indicated by samples point in a annotations json file performed with Sloth Labeling
 
 <p align="center">
   <img src="https://user-images.githubusercontent.com/16541529/30553977-487e6142-9c79-11e7-8053-5d155086f298.png" alt="SamplesPoint" width="350px" />
