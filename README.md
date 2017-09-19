@@ -14,7 +14,7 @@
     -s SIZES [SIZES ...]  box size to be cropped around the sample point
     -t TAGS [TAGS ...]    sample point tag to be cropped (see class in .json file)
     -jf JSONFILES [JSONFILES ...]
-                        .json file with annotations over the images. We assumes that the set of images are under /imgs folder in actual path
+                        .json file with annotations over the images. We assumed that the set of images are under /imgs folder in actual path
 
 # Contributing to annotations
 
