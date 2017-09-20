@@ -6,15 +6,23 @@
 </p>
 
 # Usage 
-  usage: extract-samples-point.py [-h] -s SIZES [SIZES ...] -t TAGS [TAGS ...]
-                                -jf JSONFILES [JSONFILES ...]
+usage: crop-samples-point.py [-h] -s SIZES [SIZES ...] -t TAGS [TAGS ...] -jf
+                             JSONFILES [JSONFILES ...]
 
-  optional arguments:
-    -h, --help            show this help message and exit
-    -s SIZES [SIZES ...]  box size to be cropped around the sample point
-    -t TAGS [TAGS ...]    sample point tag to be cropped (see class in .json file)
-    -jf JSONFILES [JSONFILES ...]
-                        .json file with annotations over the images. We assumed that the set of images are under /imgs folder in actual path
+Crops images around the sample point with user defined sizes
+
+optional arguments:
+  -h, --help            show this help message and exit
+  
+  -s SIZES [SIZES ...]  Box size to be cropped around the sample point
+  
+  -t TAGS [TAGS ...]    Sample point tag to be cropped (see class in .json
+                        file)
+                        
+  -jf JSONFILES [JSONFILES ...]
+                        .json file with annotations over the images. We
+                        assumed that the set of images are under /imgs folder
+                        in actual path
 
 # Contributing to annotations
 
