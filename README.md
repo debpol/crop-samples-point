@@ -22,7 +22,7 @@ optional arguments:
   -jf JSONFILES [JSONFILES ...]
                         .json file with annotations over the images. We
                         assumed that the set of images are under /imgs folder
-                        in actual path
+                        in current path
 
 # Contributing to annotations
 
