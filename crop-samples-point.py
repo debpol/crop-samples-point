@@ -10,6 +10,7 @@ parser = argparse.ArgumentParser(description='Crops images around the sample poi
 
 parser.add_argument("-s", dest="sizes", type=int,required=True,nargs='+', help="Box size to be cropped around the sample point")
 parser.add_argument("-t", dest="tags",type=str,required=True,nargs='+', help="Sample point tag to be cropped (see class in .json file)")   #eg.: sample-point-sea,sample-point-sky,sample-point-dolphin             
+parser.add_argument("-p", dest="path", type=str, required=True, help="directory path where are .jpg file images to be cropped")
 parser.add_argument("-jf", dest="jsonfiles", type=str,required=True, nargs='+', help=".json file with annotations over the images. We assumed that the set of images are under /imgs folder in current path")
 
 args = parser.parse_args()
@@ -18,7 +19,7 @@ for json_fn in args.jsonfiles:
   annotations = json.loads(open(json_fn).read())
   #for each one img file ...
   for data in annotations:
-    fn = 'imgs/'+ data['filename'] 
+    fn = args.path + "/" + data['filename'] 
     print 'Processing {}'.format(fn)
     if data['annotations']:
       # We're only interested in the classes of tags indicated ins args
